@@ -5,7 +5,7 @@ default: &default
 development:
   <<: *default
   database: hacker_one
-  username: root
+  username: <%= ENV["MYSQL_USER"] %>
   password: <%= ENV["MYSQL_PASSWORD"] %>
 
 # Warning: The database defined as "test" will be erased and
