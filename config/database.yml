@@ -5,7 +5,7 @@ default: &default
 development:
   <<: *default
   database: hacker_one
-  username: <%= ENV["MYSQL_USER"] %>
+  username: root
   password: <%= ENV["MYSQL_PASSWORD"] %>
 
 # Warning: The database defined as "test" will be erased and
@@ -19,8 +19,9 @@ test:
 staging:
   <<: *default
   database: hacker_one
-  username: root
+  username: <%= ENV["MYSQL_USER"] %>
   password: <%= ENV["MYSQL_PASSWORD"] %>
+  host: database-1.cutddhppl0kd.us-west-2.rds.amazonaws.com
 
 production:
   <<: *default
